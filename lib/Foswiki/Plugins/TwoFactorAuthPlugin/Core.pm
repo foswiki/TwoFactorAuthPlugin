@@ -32,7 +32,7 @@ sub new {
     logo => $Foswiki::cfg{TwoFactorAuthPlugin}{LogoUrl} // 'https://foswiki.org/pub/System/ProjectLogos/foswiki-logo-large.png',
     maxAttempts => $Foswiki::cfg{TwoFactorAuthPlugin}{MaxAttempts} // 4,
     attemptsPeriod => $Foswik::cfg{TwoFactorAuthPlugin}{AttemptsPeriod} // 30,
-    issuer => $Foswik::cfg{TwoFactorAuthPlugin}{Issuer} // Foswiki::Func::getPreferencesValue("WIKITOOLNAME"),
+    issuer => $Foswik::cfg{TwoFactorAuthPlugin}{Issuer} || Foswiki::Func::getPreferencesValue("WIKITOOLNAME"),
     filePerms => $Foswiki::cfg{RCS}{filePermission} || 0600,
     @_
   }, $class);
