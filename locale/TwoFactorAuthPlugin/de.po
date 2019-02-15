@@ -1,0 +1,133 @@
+# Foswiki translation for Deutsch
+msgid ""
+msgstr ""
+"Project-Id-Version: Foswiki $Id\n"
+"Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-02-25 16:35+0200\n"
+"Last-Translator: Michael Daum <foswiki@michaeldaumconsulting.com>\n"
+"Language-Team: German <http://translate.foswiki.org/projects/foswiki/"
+"distribution-master/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.4\n"
+
+#: templates/twofactorbase.tmpl:91
+msgid "Abort"
+msgstr "Abbruch"
+
+#: templates/twofactorbase.tmpl:141
+msgid "Activate"
+msgstr "Aktivieren"
+
+#: templates/twofactorbase.tmpl:132
+msgid ""
+"After scanning the image or entering the code, the authentication "
+"application is ready to generate six-digit codes. Enter the code below to "
+"activate the two-factor authentication for your account."
+msgstr ""
+"Nachdem Sie das Bild gescannt haben bzw. den Code eingegeben haben, ist die "
+"Authentifizierungs-Applikation bereit, einen sechstelligen Code zu "
+"generieren. Geben Sie den Code unten ein, um die Zwei-Faktoren "
+"Authentifikation für Ihren Account zu aktivieren."
+
+#: templates/twofactorbase.tmpl:44
+msgid "Are you sure that you want to deactivate two-factor authentication?"
+msgstr ""
+"Sind Sie sicher, dass Sie die Zwei-Faktoren Authentifikation deaktivieren "
+"wollen?"
+
+#: templates/twofactorbase.tmpl:136
+msgid "Code"
+msgstr "Code"
+
+#: templates/twofactorbase.tmpl:99
+msgid "Configure authentication application"
+msgstr "Authentifizierungs-Applikation konfigurieren"
+
+#: templates/twofactorbase.tmpl:38
+msgid "Disable two-factor authentication"
+msgstr "Zwei-Faktoren Authentifikation deaktivieren"
+
+#: templates/twofactorlogin.nat.tmpl:7 templates/twofactorlogin.tmpl:6
+msgid "Error, access code does not match."
+msgstr "Fehler, der Zugangscode passt nicht."
+
+#: templates/twofactorbase.tmpl:70
+msgid "Install a two-factor application on your phone"
+msgstr "Installieren Sie eine Zwei-Faktoren Applikation auf Ihrem Telefon"
+
+#: templates/twofactorlogin.nat.tmpl:15 templates/twofactorlogin.tmpl:14
+msgid "Issuer"
+msgstr "Aussteller"
+
+#: templates/twofactorbase.tmpl:121 templates/twofactorbase.tmpl:92
+msgid "Next"
+msgstr "Weiter"
+
+#: templates/twofactorbase.tmpl:47
+msgid "No, thanks"
+msgstr "Nein, danke"
+
+#: templates/twofactorbase.tmpl:109
+msgid "Or enter this code into your authentication application."
+msgstr "Oder geben Sie den Code in Ihre Authentifizierungs-Applikation ein."
+
+#: templates/twofactorbase.tmpl:13
+msgid "Please [[%1][log in]] first."
+msgstr "Bitte [[%1][melden]] Sie sich zuerst an."
+
+#: templates/twofactorlogin.nat.tmpl:6 templates/twofactorlogin.tmpl:5
+msgid "Please enter the access code."
+msgstr "Bitte geben Sie den Zugangscode ein."
+
+#: templates/twofactorbase.tmpl:120 templates/twofactorbase.tmpl:140
+msgid "Previous"
+msgstr "Zurück"
+
+#: templates/twofactorbase.tmpl:102
+msgid ""
+"Scan this image with the two-factor authentication application on your phone."
+msgstr ""
+"Scannen Sie diese Bild mit der Zwei-Faktoren Applikation Ihres Telefons."
+
+#: templates/twofactorauth.nat.tmpl:12 templates/twofactorbase.tmpl:52
+#: templates/twofactorlogin.nat.tmpl:3 templates/twofactorlogin.tmpl:3
+msgid "Two-factor authentication"
+msgstr "Zwei-Faktoren Authentifikation"
+
+#: templates/twofactorbase.tmpl:128
+msgid "Two-step authentication has been activated."
+msgstr "Zwei-Faktoren Authentifikation wurder aktiviert."
+
+#: templates/twofactorbase.tmpl:42
+msgid "Two-step authentication has been deactivated."
+msgstr "Zwei-Faktoren Authentifikation wurder deaktiviert."
+
+#: templates/twofactorbase.tmpl:71
+msgid ""
+"Use an application on your phone to get two-factor authentication codes when "
+"prompted."
+msgstr ""
+"Benutzen Sie eine Applikation auf Ihren Telefon, um Zwei-Faktoren "
+"Zugangscodes bei Bedarf zu generieren."
+
+#: templates/twofactorbase.tmpl:131
+msgid "Verify installation"
+msgstr "Verifizierung der Installation"
+
+#: templates/twofactorbase.tmpl:72
+msgid "We recommend %1."
+msgstr "Wir empfehlen %1"
+
+#: templates/twofactorbase.tmpl:46
+msgid "Yes, deactivate"
+msgstr "Ja, deaktivieren"
+
+#: templates/twofactorbase.tmpl:20
+msgid "Your account already has got two-factor authentication."
+msgstr ""
+"Für Ihren Account ist bereits die Zwei-Faktoren Authentifikation aktiviert."

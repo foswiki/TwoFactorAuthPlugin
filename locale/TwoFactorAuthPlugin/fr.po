@@ -1,0 +1,137 @@
+# Foswiki translation for French (français)
+# Translators:
+#   Foswiki:Main/BenVoui, 2005, 2006, 2007.
+#   Foswiki:Main/RaulFRodriguez, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"Report-Msgid-Bugs-To: foswiki-developers@lists.foswiki.org\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2018-01-10 08:58+0200\n"
+"Last-Translator: Raul F Rodriguez <raulfrodriguez10@gmail.com>\n"
+"Language-Team: French <http://translate.foswiki.org/projects/foswiki/"
+"distribution-master/fr/>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.4\n"
+
+#: templates/twofactorbase.tmpl:91
+msgid "Abort"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:141
+#, fuzzy
+msgid "Activate"
+msgstr "Échec de l'activation"
+
+#: templates/twofactorbase.tmpl:132
+msgid ""
+"After scanning the image or entering the code, the authentication "
+"application is ready to generate six-digit codes. Enter the code below to "
+"activate the two-factor authentication for your account."
+msgstr ""
+
+#: templates/twofactorbase.tmpl:44
+msgid "Are you sure that you want to deactivate two-factor authentication?"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:136
+msgid "Code"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:99
+msgid "Configure authentication application"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:38
+#, fuzzy
+msgid "Disable two-factor authentication"
+msgstr "Authentification utilisateur Foswiki"
+
+#: templates/twofactorlogin.nat.tmpl:7 templates/twofactorlogin.tmpl:6
+#, fuzzy
+msgid "Error, access code does not match."
+msgstr "Les mots de passe ne concordent pas"
+
+#: templates/twofactorbase.tmpl:70
+msgid "Install a two-factor application on your phone"
+msgstr ""
+
+#: templates/twofactorlogin.nat.tmpl:15 templates/twofactorlogin.tmpl:14
+msgid "Issuer"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:121 templates/twofactorbase.tmpl:92
+msgid "Next"
+msgstr "Suivant"
+
+#: templates/twofactorbase.tmpl:47
+msgid "No, thanks"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:109
+msgid "Or enter this code into your authentication application."
+msgstr ""
+
+#: templates/twofactorbase.tmpl:13
+msgid "Please [[%1][log in]] first."
+msgstr ""
+
+#: templates/twofactorlogin.nat.tmpl:6 templates/twofactorlogin.tmpl:5
+#, fuzzy
+msgid "Please enter the access code."
+msgstr "Veuillez saisir un mot de passe."
+
+#: templates/twofactorbase.tmpl:120 templates/twofactorbase.tmpl:140
+msgid "Previous"
+msgstr "Précédent"
+
+#: templates/twofactorbase.tmpl:102
+msgid ""
+"Scan this image with the two-factor authentication application on your phone."
+msgstr ""
+
+#: templates/twofactorauth.nat.tmpl:12 templates/twofactorbase.tmpl:52
+#: templates/twofactorlogin.nat.tmpl:3 templates/twofactorlogin.tmpl:3
+#, fuzzy
+msgid "Two-factor authentication"
+msgstr "Authentification utilisateur Foswiki"
+
+#: templates/twofactorbase.tmpl:128
+#, fuzzy
+msgid "Two-step authentication has been activated."
+msgstr "Cet utilisateur a déjà été activé"
+
+#: templates/twofactorbase.tmpl:42
+#, fuzzy
+msgid "Two-step authentication has been deactivated."
+msgstr "L'inscription a été refusée"
+
+#: templates/twofactorbase.tmpl:71
+msgid ""
+"Use an application on your phone to get two-factor authentication codes when "
+"prompted."
+msgstr ""
+
+#: templates/twofactorbase.tmpl:131
+#, fuzzy
+msgid "Verify installation"
+msgstr "Inscription utilisateur"
+
+#: templates/twofactorbase.tmpl:72
+#, fuzzy
+msgid "We recommend %1."
+msgstr "(recommandé)"
+
+#: templates/twofactorbase.tmpl:46
+#, fuzzy
+msgid "Yes, deactivate"
+msgstr "Échec de l'activation"
+
+#: templates/twofactorbase.tmpl:20
+#, fuzzy
+msgid "Your account already has got two-factor authentication."
+msgstr "Authentification utilisateur Foswiki"

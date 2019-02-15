@@ -1,0 +1,144 @@
+%{#################################################################}%
+%TMPL:DEF{"content"}%%{}%
+%IF{"not context authenticated" 
+  then="$percntTMPL:P{\"twofactorauth::error::notauthenticated\"}$percnt"
+}%%IF{"context authenticated and context TwoFactorAuthenticationEnabled"
+  then="$percntTMPL:P{\"twofactorauth::error::deactivate\"}$percnt"
+}%%IF{"context authenticated and not context TwoFactorAuthenticationEnabled"
+  then="$percntTMPL:P{\"twofactorauth::activate\"}$percnt"
+}%%TMPL:END%
+
+%{#################################################################}%
+%TMPL:DEF{"twofactorauth::error::notauthenticated"}%<div class="foswikiErrorMessage">
+%MAKETEXT{"Please [[[_1]][log in]] first." args="%SCRIPTURLPATH{"login"}%"}%%ADDTOZONE{"head" 
+  id="redirect"
+  text="<meta http-equiv='refresh' content='3; URL=%SCRIPTURLPATH{"login"}%'>"
+}%</div>%TMPL:END%
+
+%{#################################################################}%
+%TMPL:DEF{"twofactorauth::error::deactivate"}%<div class="foswikiErrorMessage">
+%MAKETEXT{"Your account already has got two-factor authentication."}%
+</div>%TMPL:END%
+
+%{#################################################################}%
+%TMPL:DEF{"twofactorauth::activate"}%
+%TMPL:P{"twofactorauth::title"}%%{}%
+%IF{"'%URLPARAM{"step" default="1"}%'='1'" 
+  then="$percntTMPL:P{\"twofactorauth::step1\"}$percnt"
+}%%IF{"'%URLPARAM{"step" default="1"}%'='2'" 
+  then="$percntTMPL:P{\"twofactorauth::step2\"}$percnt"
+}%%IF{"'%URLPARAM{"step" default="1"}%'='3'" 
+  then="$percntTMPL:P{\"twofactorauth::step3\"}$percnt"
+}%%ADDTOZONE{"body" 
+  id="poweredby" 
+  text="$percntTMPL:P{\"poweredby\"}$percnt"
+}%%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"twofactorauth::disable::dialog"}%<div class="jqUIDialog foswikiFormSteps" data-modal="true" data-width="450" data-draggable="true" title="%MAKETEXT{"Disable two-factor authentication"}%">
+%JQICON{"fa-qrcode" class="foswikiRight" style="font-size:400%; line-height:1;margin:0 0 0 0.5em"}%
+<form method='post' action='%SCRIPTURLPATH{"rest"}%/TwoFactorAuthPlugin/deactivate' method='post' class="twoFactorDisableForm">
+<input type="hidden" name="topic" value="%WEB%.%TOPIC%" />
+<input type="hidden" name="redirect" value="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?flashnote=%ENCODE{"%MAKETEXT{"Two-step authentication has been deactivated."}%"}%" />
+<div class="foswikiFormStep">
+%MAKETEXT{"Are you sure that you want to deactivate two-factor authentication?"}%
+</div>
+<a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-circle-check'}">%MAKETEXT{"Yes, deactivate"}%</a>
+<a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"No, thanks"}%</a>
+</form><script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TwoFactorAuthPlugin/twofactorauth.disable.js'></script>
+</div>%TMPL:END%
+
+%{#################################################################}%
+%TMPL:DEF{"twofactorauth::title"}%<h1 >%MAKETEXT{"Two-factor authentication"}%</h1>%TMPL:END%
+
+%{#################################################################}%
+%TMPL:DEF{"twofactorauth::javascript"}%%ADDTOZONE{"script"
+  id="TWOFACTORAUTH::CONFIGURE"
+  requires="JQUERYPLUGIN::LIVEQUERY, JQUERYPLUGIN::PNOTIFY, JQUERYPLUGIN::BLOCKUI, JQUERYPLUGIN::FORM"
+  text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TwoFactorAuthPlugin/twofactorauth.form.js'></script>" 
+}%%JQREQUIRE{"codeinput, form, pnotify"}%%{}%%TMPL:END%
+
+
+%{#################################################################}%
+%TMPL:DEF{"twofactorauth::step1"}%%TMPL:P{"twofactorauth::installapp"}%%TMPL:END%
+%TMPL:DEF{"twofactorauth::step2"}%%TMPL:P{"twofactorauth::barcodestep"}%%TMPL:END%
+%TMPL:DEF{"twofactorauth::step3"}%%TMPL:P{"twofactorauth::activatestep"}%%TMPL:P{"twofactorauth::javascript"}%%TMPL:END%
+
+%{#################################################################}%
+%TMPL:DEF{"twofactorauth::installapp"}%<div class='foswikiFormSteps' style="max-width:45em">
+<div class="foswikiFormStep">
+---++ 1. %MAKETEXT{"Install a two-factor application on your phone"}%
+%MAKETEXT{"Use an application on your phone to get two-factor authentication codes when prompted."}%
+%MAKETEXT{"We recommend [_1]." args="<a href='https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp'>FreeOTP</a>"}%
+
+%BEGINGRID{style="margin-top:1em"}%
+%BEGINCOL{"4" class="foswikiCenter"}%
+<a href='https://play.google.com/store/apps/details?id=org.fedorahosted.freeotp' target='_blank'>
+<img src='%PUBURLPATH%/%SYSTEMWEB%/TwoFactorAuthPlugin/playstore.svg' alt='Google Play Store' width='135'>
+</a>
+%BEGINCOL{"4" class="foswikiCenter"}%
+<a href='https://itunes.apple.com/us/app/freeotp-authenticator/id872559395?mt=8' target='_blank'>
+<img src='%PUBURLPATH%/%SYSTEMWEB%/TwoFactorAuthPlugin/appstore.svg' alt='Apple Store' width='135'>
+</a>
+%BEGINCOL{"4" class="foswikiCenter"}%
+<a href='https://f-droid.org/packages/org.fedorahosted.freeotp' target='_blank'>
+<img src='%PUBURLPATH%/%SYSTEMWEB%/TwoFactorAuthPlugin/fdroid.svg' alt='Android F-Droid' width='135'>
+</a>
+%ENDGRID%
+</div>
+<hr />
+<div class='foswikiFormStep clearfix'>
+  <a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%" class="jqButton foswikLeft">%JQICON{"fa-times"}% %MAKETEXT{"Abort"}%</a>
+  <a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=twofactorauth&step=2" class="jqButton foswikiRight">%MAKETEXT{"Next"}% %JQICON{"fa-arrow-right"}%</a>
+</div>
+</div>%TMPL:END%
+
+%{#################################################################}%
+%TMPL:DEF{"twofactorauth::barcodestep"}%<div class='foswikiFormSteps' style="max-width:45em">
+<div class='foswikiFormStep'>
+---++ 2. %MAKETEXT{"Configure authentication application"}%
+%BEGINGRID{border="on"}%
+%BEGINCOL{"6"}%
+%MAKETEXT{"Scan this image with the two-factor authentication application on your phone."}%
+
+<div class="foswikiCenter" style="margin:2em 0">
+%QRCODE{"$percntOTPINFO$percnt"}%
+</div>
+
+%BEGINCOL{"6"}%
+%MAKETEXT{"Or enter this code into your authentication application."}%
+
+<div class="foswikiCenter" style="margin-top:5em">
+<noautolink>
+*%OTPINFO{"$secret"}%*
+</noautolink>
+</div>
+%ENDGRID%
+</div>
+<hr />
+<div class='foswikiFormStep clearfix'>
+  <a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=twofactorauth&step=1" class="jqButton foswikiLeft">%JQICON{"fa-arrow-left"}% %MAKETEXT{"Previous"}%</a>
+  <a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=twofactorauth&step=3" class="jqButton foswikiRight">%MAKETEXT{"Next"}% %JQICON{"fa-arrow-right"}%</a>
+</div>
+</div>%TMPL:END%
+
+%{#################################################################}%
+%TMPL:DEF{"twofactorauth::activatestep"}%<form method='post' action='%SCRIPTURLPATH{"rest"}%/TwoFactorAuthPlugin/activate' method='post' class="twoFactorForm">
+<input type="hidden" name="topic" value="%WEB%.%TOPIC%" />
+<input type="hidden" name="redirect" value="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?flashnote=%ENCODE{"%MAKETEXT{"Two-step authentication has been activated."}%"}%" />
+<div class='foswikiFormSteps' style="max-width:45em">
+<div class="foswikiFormStep">
+---++ 3. %MAKETEXT{"Verify installation"}%
+%MAKETEXT{"After scanning the image or entering the code, the authentication application is ready to generate six-digit codes. Enter the code below to activate the two-factor authentication for your account."}%
+</div>
+<div class="foswikiFormStep foswikiCenter">
+
+*%MAKETEXT{"Code"}%:* <input type="text" name="code" size="6" class="foswikiInputField jqCodeInput" data-focus-char="0" data-separator="-" />
+</div>
+<hr />
+<div class='foswikiFormStep clearfix'>
+  <a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?template=twofactorauth&step=2" class="jqButton foswikiLeft">%JQICON{"fa-arrow-left"}% %MAKETEXT{"Previous"}%</a>
+  <a href="#" class="jqButton jqSubmitButton foswikiRight">%JQICON{"fa-check"}% %MAKETEXT{"Activate"}% </a>
+</div>
+</div>
+</form>%TMPL:END%

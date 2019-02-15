@@ -1,0 +1,12 @@
+*,v
+*gz
+locale/**/*~
+/TwoFactorAuthPlugin_installer
+/TwoFactorAuthPlugin_installer.pl
+/TwoFactorAuthPlugin.md5
+/TwoFactorAuthPlugin.sha1
+/TwoFactorAuthPlugin.tgz
+/TwoFactorAuthPlugin.txt
+/TwoFactorAuthPlugin.zip
+pub/System/TwoFactorAuthPlugin/twofactorauth.disable.js
+pub/System/TwoFactorAuthPlugin/twofactorauth.form.js

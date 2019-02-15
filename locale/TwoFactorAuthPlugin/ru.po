@@ -1,0 +1,141 @@
+# Foswiki translation for Russian
+# Translators:
+#   Foswiki:Main/SergejZnamenskij, 2006
+#   Foswiki:Main/AndreyTkachenko, 2006 (Coordinator)
+#   Foswiki:Main/SergeyJSinx, 2006
+#   Foswiki:Main/AlexTananaev, 2007
+#   Foswiki:Main/AndrewPantyukhin, 2009
+msgid ""
+msgstr ""
+"Project-Id-Version: ru $Id\n"
+"Report-Msgid-Bugs-To: foswiki-svn@lists.sourceforge.net\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2010-09-05 10:53+0000\n"
+"Last-Translator: Ivan Pesin <sp_ipesin@n-ix.com.ua>\n"
+"Language-Team: Russian Team <svz@latex.pereslavl.ru, falko-mail@inbox.ru, "
+"jsinx@front.ru, alex@amibel.ru, infofarmer@FreeBSD.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 1.1.0\n"
+
+#: templates/twofactorbase.tmpl:91
+msgid "Abort"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:141
+#, fuzzy
+msgid "Activate"
+msgstr "Неверный код активации"
+
+#: templates/twofactorbase.tmpl:132
+msgid ""
+"After scanning the image or entering the code, the authentication "
+"application is ready to generate six-digit codes. Enter the code below to "
+"activate the two-factor authentication for your account."
+msgstr ""
+
+#: templates/twofactorbase.tmpl:44
+msgid "Are you sure that you want to deactivate two-factor authentication?"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:136
+msgid "Code"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:99
+msgid "Configure authentication application"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:38
+#, fuzzy
+msgid "Disable two-factor authentication"
+msgstr "Аутентификация пользователя Foswiki"
+
+#: templates/twofactorlogin.nat.tmpl:7 templates/twofactorlogin.tmpl:6
+#, fuzzy
+msgid "Error, access code does not match."
+msgstr "Пароли не совпадают"
+
+#: templates/twofactorbase.tmpl:70
+msgid "Install a two-factor application on your phone"
+msgstr ""
+
+#: templates/twofactorlogin.nat.tmpl:15 templates/twofactorlogin.tmpl:14
+msgid "Issuer"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:121 templates/twofactorbase.tmpl:92
+msgid "Next"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:47
+msgid "No, thanks"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:109
+msgid "Or enter this code into your authentication application."
+msgstr ""
+
+#: templates/twofactorbase.tmpl:13
+msgid "Please [[%1][log in]] first."
+msgstr ""
+
+#: templates/twofactorlogin.nat.tmpl:6 templates/twofactorlogin.tmpl:5
+#, fuzzy
+msgid "Please enter the access code."
+msgstr "Пожалуйста, введите админский пароль Вики"
+
+#: templates/twofactorbase.tmpl:120 templates/twofactorbase.tmpl:140
+msgid "Previous"
+msgstr ""
+
+#: templates/twofactorbase.tmpl:102
+msgid ""
+"Scan this image with the two-factor authentication application on your phone."
+msgstr ""
+
+#: templates/twofactorauth.nat.tmpl:12 templates/twofactorbase.tmpl:52
+#: templates/twofactorlogin.nat.tmpl:3 templates/twofactorlogin.tmpl:3
+#, fuzzy
+msgid "Two-factor authentication"
+msgstr "Аутентификация пользователя Foswiki"
+
+#: templates/twofactorbase.tmpl:128
+#, fuzzy
+msgid "Two-step authentication has been activated."
+msgstr "Этот пользователь уже был активирован "
+
+#: templates/twofactorbase.tmpl:42
+#, fuzzy
+msgid "Two-step authentication has been deactivated."
+msgstr "Простите, регистрация временно отключена"
+
+#: templates/twofactorbase.tmpl:71
+msgid ""
+"Use an application on your phone to get two-factor authentication codes when "
+"prompted."
+msgstr ""
+
+#: templates/twofactorbase.tmpl:131
+#, fuzzy
+msgid "Verify installation"
+msgstr "Регистрация"
+
+#: templates/twofactorbase.tmpl:72
+#, fuzzy
+msgid "We recommend %1."
+msgstr "(рекомендуется)"
+
+#: templates/twofactorbase.tmpl:46
+#, fuzzy
+msgid "Yes, deactivate"
+msgstr "Неверный код активации"
+
+#: templates/twofactorbase.tmpl:20
+#, fuzzy
+msgid "Your account already has got two-factor authentication."
+msgstr "Аутентификация пользователя Foswiki"

@@ -1,0 +1,18 @@
+%TMPL:INCLUDE{"login"}%%{}%
+
+%TMPL:DEF{"title"}%%MAKETEXT{"Two-factor authentication"}%%TMPL:END%
+%TMPL:DEF{"seealso"}%%TMPL:END%
+
+%TMPL:DEF{"LOG_IN_BANNER"}%%MAKETEXT{"Please enter the access code."}%%TMPL:END%
+%TMPL:DEF{"UNRECOGNISED_USER"}%%MAKETEXT{"Error, access code does not match."}%%TMPL:END%
+
+%TMPL:DEF{"login::usernamestep"}%<input type='hidden' name='username' value='%LOGINNAME%' />%TMPL:END%
+
+%TMPL:DEF{"login::passwordstep"}%<div class="foswikiFormStep">
+<input type='text' class='foswikiInputField jqCodeInput' size='6' name='accesscode' data-separator="-" data-focus-char="0" />
+<p class="foswikiFormDescription">
+<noautolink>
+(%MAKETEXT{"Issuer"}%: %OTPINFO{"$issuer"}%)
+</noautolink>
+</p>
+</div>%JQREQUIRE{"codeinput"}%%TMPL:END%

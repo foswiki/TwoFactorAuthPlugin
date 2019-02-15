@@ -1,0 +1,6 @@
+Authen::OATH,>=2.0,cpan,Required
+URI::Escape,>=0,cpan,Required
+Convert::Base32,>=0,cpan,Required
+Foswiki::Contrib::JQCodeInputContrib,>=1.0,perl,Required
+Foswiki::Plugins::QRCodePlugin,>=1.0,perl,Required
+Foswiki::Plugins::GridLayoutPlugin,>=1.0,perl,Required
