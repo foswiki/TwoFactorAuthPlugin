@@ -40,8 +40,6 @@ pub/System/TwoFactorAuthPlugin/twofactorauth.disable.uncompressed.js 0644
 pub/System/TwoFactorAuthPlugin/twofactorauth.form.js 0644
 pub/System/TwoFactorAuthPlugin/twofactorauth.form.js.gz 0644
 pub/System/TwoFactorAuthPlugin/twofactorauth.form.uncompressed.js 0644
-templates/twofactorauth.nat.tmpl 0644
 templates/twofactorauth.tmpl 0644
 templates/twofactorbase.tmpl 0644
-templates/twofactorlogin.nat.tmpl 0644
 templates/twofactorlogin.tmpl 0644

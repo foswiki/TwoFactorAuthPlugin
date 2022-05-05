@@ -24,7 +24,7 @@
 %META:FIELD{name="Version" title="Version" value="%25$VERSION%25"}%
 %META:FIELD{name="Release" title="Release" value="%25$RELEASE%25"}%
 %META:FIELD{name="Description" title="Description" value="%25$SHORTDESCRIPTION%25"}%
-%META:FIELD{name="Copyright" value="2018-2019 Michael Daum http://michaeldaumconsulting.com"}%
+%META:FIELD{name="Copyright" value="2018-2022 Michael Daum"}%
 %META:FIELD{name="License" value="GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]])"}%
 %META:FIELD{name="Repository" value="https://github.com/foswiki/%25TOPIC%25"}%
 %META:FIELD{name="Home" value="https://foswiki.org/Extensions/%25TOPIC%25"}%

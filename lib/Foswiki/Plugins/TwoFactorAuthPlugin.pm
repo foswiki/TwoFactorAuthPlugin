@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, https://foswiki.org/
 #
-# TwoFactorAuthPlugin is Copyright (C) 2018-2019 Michael Daum http://michaeldaumconsulting.com
+# TwoFactorAuthPlugin is Copyright (C) 2018-2022 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -22,7 +22,7 @@ use Foswiki::Func ();
 use Foswiki::Plugins::JQueryPlugin ();
 
 our $VERSION = '1.00';
-our $RELEASE = '15 Feb 2019';
+our $RELEASE = '05 May 2022';
 our $SHORTDESCRIPTION = 'Two-factor authentication solution based on one-time passwords';
 our $NO_PREFS_IN_TOPIC = 1;
 our $core;
@@ -52,7 +52,14 @@ sub initPlugin {
 
   getCore();
 
-# unless (Foswiki::Func::getContext()->{login}) {
+  unless ($Foswiki::cfg{LoginManager} =~ /TwoFactorAuth/) {
+    Foswiki::Func::writeWarning("TwoFactorAuthPlugin disabled as you don't seem to have set the LoginManager accordingly");
+    return 0;
+  }
+
+  my $context = Foswiki::Func::getContext();
+
+# unless ($context->{login}) {
 #   my $isProtected = Foswiki::Func::isTrue(Foswiki::Func::getPreferencesValue("TWOFACTORAUTH_PROTECTION"), 0);
 # 
 #   if ($isProtected) {
@@ -65,20 +72,17 @@ sub initPlugin {
 #   }
 # }
 
-  unless ($Foswiki::cfg{LoginManager} =~ /TwoFactorAuth/) {
-    Foswiki::Func::writeWarning("TwoFactorAuthPlugin disabled as you don't seem to have set the LoginManager accordingly");
-    return 0;
-  }
+  $context->{two_factor_auth} = 1;
 
   return 1;
 }
 
-sub packRequest {
-  my $request = shift;
-
-  $request ||= Foswiki::Func::getRequestObject();
-  return ($request->method() || 'UNDEFINED').':'.$request->action().':'.$request->uri;
-}
+#sub packRequest {
+#  my $request = shift;
+#
+#  $request ||= Foswiki::Func::getRequestObject();
+#  return ($request->method() || 'UNDEFINED').':'.$request->action().':'.$request->uri;
+#}
 
 sub getCore {
   unless (defined $core) {

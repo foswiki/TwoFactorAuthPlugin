@@ -1,7 +1,7 @@
 /*
  * TwoFactorAuthForm 1.0
  *
- * Copyright (c) 2018-2019 Michael Daum https://michaeldaumconsulting.com
+ * Copyright (c) 2018-2022 Michael Daum https://michaeldaumconsulting.com
  *
  * Foswiki - The Free and Open Source Wiki, http://foswiki.org/
  *

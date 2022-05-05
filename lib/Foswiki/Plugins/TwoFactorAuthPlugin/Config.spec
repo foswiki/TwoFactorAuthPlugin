@@ -14,11 +14,11 @@ $Foswiki::cfg{TwoFactorAuthPlugin}{AttemptsPeriod} = 30;
 # Logo to be displayed in the 2FA token app on your mobile device. 
 # Note that the url of this logo has to be accessible to the outside world, i.e. your mobile device
 # when the token is initiated.
-$Foswiki::cfg{TwoFactorAuthPlugin}{LogoUrl} = 'https://foswiki.org/pub/System/ProjectLogos/foswiki-logo-large.png',
+$Foswiki::cfg{TwoFactorAuthPlugin}{LogoUrl} = 'https://foswiki.org/pub/System/ProjectLogos/foswiki-logo-large.png';
 
 # **STRING**
 # Name of the site associated with the one-time password on your mobile device.
 # This defaults to the WIKITOOLNAME if left undefined.
-$Foswik::cfg{TwoFactorAuthPlugin}{Issuer} = '';
+$Foswiki::cfg{TwoFactorAuthPlugin}{Issuer} = '';
 
 1;

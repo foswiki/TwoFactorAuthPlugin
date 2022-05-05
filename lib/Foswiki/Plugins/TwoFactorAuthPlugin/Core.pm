@@ -1,6 +1,6 @@
 # Plugin for Foswiki - The Free and Open Source Wiki, https://foswiki.org/
 #
-# TwoFactorAuthPlugin is Copyright (C) 2018-2019 Michael Daum http://michaeldaumconsulting.com
+# TwoFactorAuthPlugin is Copyright (C) 2018-2022 Michael Daum http://michaeldaumconsulting.com
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -21,6 +21,7 @@ use warnings;
 use Foswiki::Func ();
 use URI::Escape qw(uri_escape);
 use Convert::Base32 qw( encode_base32 decode_base32);
+use JSON ();
 
 use constant TRACE => 0; # toggle me
 
@@ -33,7 +34,7 @@ sub new {
     maxAttempts => $Foswiki::cfg{TwoFactorAuthPlugin}{MaxAttempts} // 4,
     attemptsPeriod => $Foswik::cfg{TwoFactorAuthPlugin}{AttemptsPeriod} // 30,
     issuer => $Foswik::cfg{TwoFactorAuthPlugin}{Issuer} || Foswiki::Func::getPreferencesValue("WIKITOOLNAME"),
-    filePerms => $Foswiki::cfg{RCS}{filePermission} || 0600,
+    filePerms => $Foswiki::cfg{RCS}{filePermission} || oct(600),
     @_
   }, $class);
 
